@@ -98,11 +98,11 @@ class wigleAPI {
     function wigle_login($user,$pass){     
         $ch = curl_init();
         // set the target url
-        curl_setopt($ch, CURLOPT_URL,"https://wigle.net/gps/gps/main/login");
+        curl_setopt($ch, CURLOPT_URL,"https://wigle.net/login");
         // how many parameters to post
         curl_setopt($ch, CURLOPT_POST, 3);
         // post parameters
-        curl_setopt($ch, CURLOPT_POSTFIELDS,"credential_0=".$user."&credential_1=".$pass."&noexpire=off");      
+        curl_setopt($ch, CURLOPT_POSTFIELDS,"credential_0=".$user."&credential_1=".$pass."&noexpire=off&destination='/'");      
         curl_setopt ($ch, CURLOPT_HEADER, 1);
         curl_setopt ($ch, CURLINFO_HEADER_OUT, 1);     
         curl_setopt($ch, CURLOPT_RETURNTRANSFER  ,1);
